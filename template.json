@@ -29,7 +29,7 @@
         "guest_additions_path": "VBoxGuestAdditions.iso",
   
         "boot_command": [
-          "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.ks<enter><wait>"
+          "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/kikstart.ks<enter><wait>"
         ],
 
         "shutdown_command": "sudo -S /sbin/halt -h -p",
