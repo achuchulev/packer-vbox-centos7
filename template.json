@@ -26,7 +26,7 @@
         "iso_url": "{{user `iso_url`}}",
         "iso_checksum": "{{user `iso_checksum`}}",
         "iso_checksum_type": "{{user `iso_checksum_type`}}",
-        "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+        "guest_additions_path": "VBoxGuestAdditions.iso",
   
         "boot_command": [
           "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/kickstart.ks<enter><wait>"
@@ -35,14 +35,10 @@
         "shutdown_command": "sudo -S /sbin/halt -h -p",
         "shutdown_timeout" : "5m",
 
-        "communicator":"ssh",
         "ssh_wait_timeout": "15m",
         "ssh_username": "{{user `ssh_username`}}",
         "ssh_password": "{{user `ssh_password`}}",
-        "ssh_port": 22,
-        "ssh_pty": true,
 
-  
         "vboxmanage": [
           [  "modifyvm",  "{{.Name}}",  "--memory",  "1024" ],
           [  "modifyvm",  "{{.Name}}",  "--cpus",  "2" ]
@@ -70,6 +66,7 @@
           "scripts": [
             "scripts/base.sh",
             "scripts/vagrant.sh",
+            "scripts/virtualbox.sh",
             "scripts/cleanup.sh"
             ]
         }
