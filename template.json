@@ -11,6 +11,7 @@
         "iso_checksum_type": "sha256",
         "iso_url": "http://mirrors.neterra.net/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso",
         "cloud_token": "{{ env `MY_ATLAS_TOKEN` }}",
+        "version": "0.0.1-{{timestamp}}"
         "ssh_username": "vagrant",
         "ssh_password": "vagrant"
     },
@@ -82,7 +83,7 @@
          "type": "vagrant-cloud",
          "box_tag": "achuchulev/centos7",
          "access_token": "{{user `cloud_token`}}",
-         "version": "{{user `0.0.1`}}"
+         "version": "{{user `version`}}"
          }  
         ]
     ]
